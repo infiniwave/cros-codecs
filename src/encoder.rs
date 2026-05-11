@@ -158,6 +158,8 @@ impl fmt::Display for EncodeError {
     }
 }
 
+impl std::error::Error for EncodeError {}
+
 impl From<StatelessBackendError> for EncodeError {
     fn from(err: StatelessBackendError) -> Self {
         EncodeError::StatelessBackendError(err)
